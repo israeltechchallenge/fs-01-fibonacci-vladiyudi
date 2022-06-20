@@ -10,4 +10,13 @@ form {
 }
 #displayF {
     margin-left: 1vw;
+    font-weight: bold;
+    text-decoration: underline;
+}
+form div {
+    display: flex;
+    align-items:center
+}
+form input {
+    margin: 0 1vw;
 }
