@@ -1,0 +1,13 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-left: 7vw;
+    margin-top: 10vh;
+}
+#displayF {
+    margin-left: 1vw;
+}
