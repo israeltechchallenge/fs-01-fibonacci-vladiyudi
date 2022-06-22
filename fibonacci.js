@@ -15,17 +15,27 @@ function runFibonacci() {
     finalResult.innerText = " ";
     finalResult.classList.add("spinner-border");
     fetch(`http://localhost:5050/fibonacci/${input.value}`)
-      .then((response) => response.json())
+      .then((response) => {
+        try { if (!response.ok) 
+           {
+            throw Error (" ")
+        }
+        } 
+        catch (error){
+           error.massage = "Server Error: 42 is meaning of life"
+            console.log(error)
+           serverError.innerText = error.massage;
+           finalResult.classList.remove("spinner-border");
+        }
+        finally {
+            return response.json()
+        }
+  }
+      )
       .then((data) => {
         finalResult.classList.remove("spinner-border");
         document.getElementById("displayF").innerText = data.result;
       });
-    try {
-      if (input.value === "42") throw "Server Error: 42 is meaning of life";
-    } catch (error) {
-        serverError.innerText = error
-        finalResult.classList.remove("spinner-border"); 
-    }
   }
 }
 
@@ -36,4 +46,5 @@ function clearInput() {
   input.classList.remove("red");
   serverError.innerText = " ";
 }
+
 
