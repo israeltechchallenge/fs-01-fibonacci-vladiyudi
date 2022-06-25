@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </head>
 <body class="d-flex flex-column">
     <h1 class="display-1 m-5" >Fibonacci Calculator</h1>
@@ -18,26 +20,49 @@
     <div>
         <div class="fs-4 p-1">The Fibonacci of</div>
         <div class="p-1">
-            <input type="number" size="1" class="form-control" style="width:100px" placeholder="#" id="fInput"/>
-          </div>
+            <input type="number" size="1" class="form-control pt-1 pb-1" style="width:100px" placeholder="#" id="fInput"/>
+        </div>
           <div class="p-1">
             <button type="button" class="btn btn-primary" id="fButton">Is</button>
           </div>
           <div class="fs-4 p-1">
           </div>
-        <div id="displayF" class=" text-primary m-2"></div>
+        <div id="displayF" class=" text-primary ml-2"></div>
         <div id="serverError"></div>
     </div>
-    <p class="error d-none">Can't be larger than 50</p>
+    <div class="form-check d-inline-block pt-3 pb-3">
+        <input class="form-check-input" id="saveCalculation" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Save Calculation
+        </label>
+        <span class="error d-none">Can't be larger than 50</span>
+      </div>
     </form>
-        <div class="d-flex flex-row align-items-center mt-3 mb-5">
+        <div class="d-flex flex-row align-items-center mt-3 mb-5 ">
+            <div class="">
+                <div class=" d-flex align-content-center">
             <h2 class="display-3 ms-5 ">Results</h2>
-            <div class="ms-3 spinner-border d-none" role="status" id="spinnerResult">
-              <span class="visually-hidden">Loading...</span>
+            <span class="ms-3 spinner-border d-none mt-3" role="status" id="spinnerResult">
+            </span>
+            </div>
+            <div class="dropdown w-75 mx-5">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Sort By
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Number Asc</a></li>
+                  <div class="dropdown-divider"></div>
+                  <li><a class="dropdown-item" href="#">Number Desc</a></li>
+                  <div class="dropdown-divider"></div>
+                  <li><a class="dropdown-item" href="#">Date Asc</a></li>
+                  <div class="dropdown-divider"></div>
+                  <li><a class="dropdown-item" href="#">Date Desc</a></li>
+                </ul>
+                <span class="text-muted mx-2"></span>
+              </div>
           </div>
         </div>
         <div class="mt-3 ms-5 resultContainer flex-column align-items-start">
-            <!-- <span class="fs-5 border-bottom pb-3 border-secondary">The Fibonnaci Of <b>8</b> is <b>21</b>. Calculated at: Thu Feb 2 2020 10:33:24 GMT+0200 (Israel Standard Time) </span> -->
         </div>
 </body>
 <script src="fibonacci.js"></script>
