@@ -1,0 +1,39 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-left: 7vw;
+    margin-top: 10vh;
+}
+form div {
+    display: flex;
+    align-items:center
+}
+form input {
+    margin: 0 1vw;
+}
+.red{
+border: 1px solid red;
+color: red;
+height:6.5vh;
+border-radius: 4px;
+}
+.error{
+background-color: rgb(233, 199, 199);
+color: #A94442;
+margin-left: 3.5vw;
+/* margin-top: 1vh; */
+font-size: 16px;
+border-radius: 4px;
+padding: 1vh 0;
+}
+#serverError {
+    color: red;
+    font-size: 16px;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
