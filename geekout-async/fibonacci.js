@@ -22,6 +22,7 @@ let spinnerResult = document.getElementById("spinnerResult");
 let saveCalculation = document.getElementById("saveCalculation");
 let select = document.getElementById("select");
 let showSelectedValue = document.querySelector(".text-muted");
+let dropDown = document.getElementsByClassName("dropdown-item");
 
 button.addEventListener("click", chooseLocalOrServer);
 input.addEventListener("focus", clearInput);
@@ -111,7 +112,8 @@ async function fetchResults(selectedValue) {
 }
 let selectedValue;
 window.addEventListener("load", fetchResults);
-let dropDown = document.getElementsByClassName("dropdown-item");
+
+
 Array.from(dropDown).forEach((item) =>
   item.addEventListener("click", (event) => {
     selectedValue = event.target.innerText;
@@ -119,6 +121,7 @@ Array.from(dropDown).forEach((item) =>
     fetchResults(selectedValue);
   })
 );
+
 function sortResultsDD(selectedValue, list) {
   if (selectedValue === "Number Asc")
     return list.sort((a, b) => (a.number > b.number ? 1 : -1));
